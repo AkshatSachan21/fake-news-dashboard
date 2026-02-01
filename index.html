@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Fake News Detection Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        AI Fake News Detection Dashboard
+        </header>
+        
+        
+
+<div class="dashboard">
+
+    <div class="sidebar" id="sidebar">
+
+        <h3>Dashboard</h3>
+        <p>🏠 Home</p>
+        <div class="home-windows">
+
+            <div class="home-box">
+            <h3>Total Predictions</h3>
+            <p id="totalCount">0</p>
+            </div>
+            
+            <div class="home-box">
+            <h3>Fake News Detected</h3>
+            <p id="fakeCount">0</p>
+            </div>
+            
+            </div>
+            
+            <p>📊 Dataset Info</p>
+
+            
+        <p onclick="toggleModel()" style="cursor:pointer;">🤖 Model Details</p>
+        <div id="modelDetails" class="about-panel">
+
+            <h2>Model Details</h2>
+            
+            <p>
+            The Fake News Detection system uses Natural Language Processing
+            to analyze textual content and extract meaningful patterns.
+            </p>
+            
+            <p>
+            TF-IDF feature extraction converts text into numerical vectors,
+            representing word importance in news articles.
+            </p>
+            
+            <p>
+            A Logistic Regression classifier is trained on news datasets
+            to distinguish between fake and real news articles.
+            </p>
+            
+            <h3>Model Workflow</h3>
+            <p>
+            Text Input → NLP Preprocessing → TF-IDF Conversion →
+            Logistic Regression Classification → Result Output
+            </p>
+            
+            <h3>Advantages of Model</h3>
+            <p>
+            Fast prediction speed, lightweight processing, and high
+            accuracy make it suitable for real-time applications.
+            </p>
+            
+            </div>
+            
+        <p>🛡 Fake News Tips</p>
+        <p onclick="toggleAbout()" style="cursor:pointer;">📁 About Project</p>
+        <div id="aboutProject" class="about-panel">
+            <h2>About This Project</h2>
+            
+            <p>
+            This Fake News Detection System uses Natural Language Processing
+            and Machine Learning techniques to classify news articles as
+            Fake or Real.
+            </p>
+            
+            <p>
+            The system analyzes textual patterns, suspicious keywords,
+            and misleading content structures commonly used in fake news.
+            </p>
+            
+            <p>
+            The goal of this project is to reduce misinformation spread
+            and help users verify news authenticity quickly.
+            </p>
+            
+            <h3>Problem Solved</h3>
+            <p>
+            Social media platforms spread fake information rapidly.
+            This system helps users automatically verify news credibility.
+            </p>
+            
+            <h3>Technologies Used</h3>
+            <p>
+            NLP, TF-IDF, Logistic Regression, Python, and Web Dashboard.
+            </p>
+            
+            </div>
+            
+        
+        <hr style="border-color:#2c1e4a; margin:15px 0;">
+        
+        <h3>AI Modules</h3>
+        <p>✔ NLP Processing</p>
+        <p>✔ TF-IDF Engine</p>
+        <p>✔ Logistic Regression</p>
+        <p>✔ Prediction Engine</p>
+        
+        <hr style="border-color:#2c1e4a; margin:15px 0;">
+        
+        <h3>Project Team</h3>
+        <p>Akshat Sachan</p>
+        <p>Aman Sharma</p>
+        <p>Ayush Pareta</p>
+        <p>Aryan Tiwari</p>
+        
+        </div>
+        
+
+<div class="main">
+
+<div class="stats">
+<div class="stat-box">
+<div class="stat-title">Model Accuracy</div>
+<div class="stat-value">94%</div>
+</div>
+
+<div class="stat-box status-active">
+    <div class="stat-title">Status</div>
+    <div class="stat-value">Active</div>
+    </div>
+    
+    
+
+<div class="stat-box">
+<div class="stat-title">Dataset</div>
+<div class="stat-value">40k</div>
+</div>
+</div>
+
+<div class="card">
+<h2>News Verification</h2>
+
+
+<textarea id="news" placeholder="Enter news article..."></textarea>
+
+<div class="voice-box">
+    <button onclick="startVoice()">🎤 Speak News</button>
+    <span id="voiceStatus">Click mic and speak</span>
+</div>
+
+<button onclick="checkNews()">Analyze News</button>
+<button onclick="clearText()">Clear</button>
+
+
+<div id="result"></div>
+<div id="probability"></div>
+
+<div class="confidence-container">
+    <div id="confidenceText"></div>
+    <div class="confidence-bar">
+        <div id="confidenceFill"></div>
+    </div>
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

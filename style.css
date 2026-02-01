@@ -1,0 +1,321 @@
+/* ---------- Base ---------- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b0618;
+    color: #e8e6f2;
+}
+
+/* ---------- Header ---------- */
+header {
+    background: #120a26;
+    padding: 16px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    border-bottom: 1px solid #2c1e4a;
+    color: #c8bfff;
+}
+
+/* ---------- Layout ---------- */
+.dashboard {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+    width: 220px;
+    background: #120a26;
+    padding: 20px;
+    border-right: 1px solid #2c1e4a;
+}
+
+.sidebar h3 {
+    color: #b9a9ff;
+    margin-bottom: 15px;
+}
+
+.sidebar p {
+    color: #8f87b5;
+    margin: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.sidebar p:hover {
+    background: #24143f;
+    color: #cfc8ff;
+    transform: translateX(4px);
+}
+
+/* ---------- Main ---------- */
+.main {
+    flex: 1;
+    padding: 40px;
+}
+
+
+
+
+/* ---------- Card ---------- */
+.card {
+    background: #17102d;
+    padding: 28px;
+    border-radius: 10px;
+    width: 600px;
+    margin: auto;
+    border: 1px solid #2c1e4a;
+}
+
+.card h2 {
+    color: #cfc8ff;
+    margin-bottom: 15px;
+}
+
+/* ---------- Stats ---------- */
+.stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: #17102d;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #2c1e4a;
+}
+
+.stat-title {
+    color: #8f87b5;
+    font-size: 13px;
+}
+
+.stat-value {
+    font-size: 18px;
+    color: #cfc8ff;
+}
+
+/* ---------- Input ---------- */
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #2c1e4a;
+    font-size: 15px;
+    background: #120a26;
+    color: #e8e6f2;
+}
+
+/* ---------- Button ---------- */
+button {
+    margin-top: 15px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #6b4cff;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover animation */
+button:hover {
+    background: #7c5cff;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(124,92,255,0.5);
+}
+
+/* Click animation */
+button:active {
+    transform: scale(0.97);
+}
+
+
+button:hover {
+    background: #5a3fff;
+}
+
+/* ---------- Result ---------- */
+#result {
+    margin-top: 18px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ---------- Scan Line ---------- */
+.scan-line {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #9a8cff, transparent);
+    animation: scan 1.2s linear infinite;
+    margin-top: 10px;
+}
+
+@keyframes scan {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+/* Sidebar toggle */
+.sidebar {
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar.closed {
+    width: 0;
+    padding: 0;
+    border: none;
+}
+/* Confidence Bar */
+.confidence-container {
+    margin-top: 15px;
+}
+
+.confidence-bar {
+    width: 100%;
+    height: 12px;
+    background: #2c1e4a;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+#confidenceFill {
+    height: 100%;
+    width: 0%;
+    background: #7c5cff;
+    transition: width 0.8s ease;
+}
+
+#confidenceText {
+    font-size: 14px;
+    color: #cfc8ff;
+}
+.voice-box {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.voice-box button {
+    padding: 6px 12px;
+    font-size: 14px;
+    background: #6b4cff;
+    border-radius: 6px;
+}
+
+#voiceStatus {
+    font-size: 13px;
+    color: #a79cff;
+}
+/* Button animations */
+button {
+    transition: all 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0px #7c5cff; }
+    50% { box-shadow: 0 0 12px #7c5cff; }
+    100% { box-shadow: 0 0 0px #7c5cff; }
+}
+
+.analyzing {
+    animation: pulse 1s infinite;
+}
+/* Active status glow */
+.status-active {
+    border: 1px solid #1eff8a;
+    box-shadow: 0 0 12px rgba(30,255,138,0.4);
+}
+
+/* Pulse glow */
+@keyframes greenGlow {
+    0% { box-shadow: 0 0 5px rgba(30,255,138,0.3); }
+    50% { box-shadow: 0 0 18px rgba(30,255,138,0.7); }
+    100% { box-shadow: 0 0 5px rgba(30,255,138,0.3); }
+}
+
+.status-active {
+    animation: greenGlow 2s infinite;
+}
+
+.status-active .stat-value {
+    color: #1eff8a;
+    font-weight: bold;
+}
+
+/*about panel */
+
+.about-panel {
+    display: none;
+    background: #17102d;
+    border: 1px solid #2c1e4a;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: #cfc8ff;
+}
+
+/* Home dashboard windows */
+.home-windows {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.home-box {
+    background: #17102d;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #2c1e4a;
+    text-align: center;
+}
+
+.home-box h3 {
+    color: #b9a9ff;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.home-box p {
+    font-size: 16px;
+    color: #cfc8ff;
+    font-weight: bold;
+}
+
+
+/* fake probabilty bar */
+
+#probability {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #b9a9ff;
+}
+
+
+
